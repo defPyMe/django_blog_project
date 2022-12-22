@@ -122,3 +122,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 KRISPY_TEMPLATE_PACK = "bootstrap4"
 LOGIN_REDIRECT_URL = "blog-home"
 LOGIN_URL = "login"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+#now we can add the credentials inside an environment variable
+EMAIL_HOST_USER = os.environ.get("EMAIL_USER")#this is the user name
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASS")
