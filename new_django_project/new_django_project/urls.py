@@ -32,6 +32,10 @@ urlpatterns = [
     path('password-reset/done', 
     auth_views.PasswordResetDoneView.as_view(template_name='users/password-reset-done.html'),
     name='password_reset_done'),
+
+    path('password-reset-confirm/<uidb64>/<token>/', 
+    auth_views.PasswordResetDoneView.as_view(template_name='users/password-reset-done.html'),
+    name='password_reset_done'),
     path("profile/", user_views.profile, name="profile"),
 ]
 if settings.DEBUG:
